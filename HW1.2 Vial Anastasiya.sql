@@ -56,18 +56,10 @@ WITH
 				''' + [DataType] + ''' as [Data Type],  
 				COUNT(distinct ['+[TableName]+'].[' + [ColumnName] + ']) as [Count of DISTINCT values], 
 				COUNT(*)-COUNT(['+[TableName]+'].[' + [ColumnName] + ']) as [Count of NULL values],
-				case when ''' + [DataType] + '''in (''int'',''decimal'') then
-				MIN(CAST( ['+[TableName]+'].[' + [ColumnName] + '] AS VARCHAR(MAX))) else NULL end as [MIN value],
-				case when ''' + [DataType] + '''in (''int'',''decimal'') then
-				MAX(CAST( ['+[TableName]+'].[' + [ColumnName] + '] AS VARCHAR(MAX))) else NULL end as [MAX value],
-				case when ''' + [DataType] + '''like ''%char%'' then(
-						sum(case when ['+[TableName]+'].[' + [ColumnName] + '] LIKE ''%[A-Z]%'' then 1 else 0 end)
-								)
-				else NULL end AS [Only UPPERCASE strings],
-				case when ''' + [DataType] + '''like ''%char%'' then(
-						sum(case when ['+[TableName]+'].[' + [ColumnName] + '] LIKE ''%[a-z]%'' then 1 else 0 end)
-						)
-				else NULL end AS [Only LOWER strings]
+				CAST(MIN(['+[TableName]+'].[' + [ColumnName] + ']) AS VARCHAR) as [MIN value],
+				CAST(MAX(['+[TableName]+'].[' + [ColumnName] + ']) AS VARCHAR) as [MAX value],
+				sum(case when (['+[TableName]+'].[' + [ColumnName] + '])=UPPER(['+[TableName]+'].[' + [ColumnName] + '])COLLATE SQL_Latin1_General_CP1_CS_AS then 1 else 0 end) [Only UPPERCASE strings],
+                sum(case when (['+[TableName]+'].[' + [ColumnName] + '])=LOWER(['+[TableName]+'].[' + [ColumnName] + '])COLLATE SQL_Latin1_General_CP1_CS_AS then 1 else 0 end) [Only LOWER strings]
 				FROM [' + @p_DatabaseName + '].['+[SchemaName]+'].[' + [TableName] + ']  UNION ALL '
 				ELSE ' SELECT 
 				''' + [DatabaseName] + ''' as [Database_Name],
@@ -78,18 +70,10 @@ WITH
 				''' + [DataType] + ''' as [Data Type], 
 				COUNT(distinct ['+[TableName]+'].[' + [ColumnName] + ']) as [Count of DISTINCT values],
 				COUNT(*)-COUNT(['+[TableName]+'].[' + [ColumnName] + ']) as [Count of NULL values],
-				case when ''' + [DataType] + '''in (''int'',''decimal'') then
-				MIN(CAST( ['+[TableName]+'].[' + [ColumnName] + '] AS VARCHAR(MAX))) else NULL end as [MIN value],
-				case when ''' + [DataType] + '''in (''int'',''decimal'') then
-				MAX(CAST( ['+[TableName]+'].[' + [ColumnName] + '] AS VARCHAR(MAX))) else NULL end as [MAX value],
-				case when ''' + [DataType] + '''like ''%char%'' then(
-						sum(case when ['+[TableName]+'].['+ [ColumnName] +'] LIKE ''%[A-Z]%'' then 1 else 0 end)
-								)
-				else NULL end AS [Only UPPERCASE strings],
-				case when ''' + [DataType] + '''like ''%char%'' then(
-						sum(case when ['+[TableName]+'].[' + [ColumnName] + '] LIKE ''%[a-z]%'' then 1 else 0 end)
-						)
-				else NULL end AS [Only LOWER strings]
+				CAST(MIN(['+[TableName]+'].[' + [ColumnName] + ']) AS VARCHAR) as [MIN value],
+				CAST(MAX(['+[TableName]+'].[' + [ColumnName] + ']) AS VARCHAR) as [MAX value],
+				sum(case when (['+[TableName]+'].[' + [ColumnName] + '])=UPPER(['+[TableName]+'].[' + [ColumnName] + '])COLLATE SQL_Latin1_General_CP1_CS_AS then 1 else 0 end) [Only UPPERCASE strings],
+                sum(case when (['+[TableName]+'].[' + [ColumnName] + '])=LOWER(['+[TableName]+'].[' + [ColumnName] + '])COLLATE SQL_Latin1_General_CP1_CS_AS then 1 else 0 end) [Only LOWER strings]
 				FROM [' + @p_DatabaseName + '].['+[SchemaName]+'].[' + [TableName] + ']'
             END [query_text]
         FROM tbl_list
@@ -103,6 +87,7 @@ END
 GO
 
 EXEC db_schema_tables_info  @p_DatabaseName = 'TRN', @p_SchemaName = 'hr', @p_TableName = 'regions';
+	select * from trn.hr.regions
 
 
 EXEC db_schema_tables_info
