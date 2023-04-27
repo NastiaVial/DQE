@@ -1,0 +1,40 @@
+Hello Deequ task.
+
+In this task you will setup environment for running PyDeequ and perform basic profiling and verification of data from "AdventureWorks2012" database (also you can use DB "TRN" from Module 1).
+
+# Environment setup:
+1. Install Docker on Windows https://docs.docker.com/desktop/windows/install/
+2. Clone repository https://github.com/jupyter/docker-stacks
+3. Rebuild docker "pyspark-notebook" image to support spark 3.0.0 version for PyDeequ needs according to instructions: https://jupyter-docker-stacks.readthedocs.io/en/latest/using/specifics.html
+"docker build --rm --force-rm -t jupyter/pyspark-notebook:spark-3.0.0 ./pyspark-notebook --build-arg spark_version=3.0.0 --build-arg spark_checksum=bfe45406c67cc4ae00411ad18cc438f51e7d4b6f14eb61e7bf6b5450897c2e8d3ab020152657c0239f253735c263512ffabf538ac5b9fffa38b8295736a9c387"
+4. Run rebuilt docker image:
+"docker run -v %cd%:/home/jovyan/work -p 8888:8888 -p 4040:4040 --user root -e JUPYTER_ENABLE_LAB=yes --name pyspark jupyter/pyspark-notebook"
+5. Copy nessessary JDBC driver to running Docker container for the further usage.
+
+#Task:
+1. Run pyspark-notebook docker container and open Deequ_pySpark_skeleton.ipynb notebook.
+2. In this notebook connect to MS SQL DB from SQL Module and using PyDeequ perform:
+- data analyzing
+- data profiling
+- constraints suggestion
+- constraints verification
+3. Make as beautiful test report as you can for constraints verification step (csv, html, etc.)
+
+# Expected output:
+Git project on git.epam.com with .ipynb file (with your output included) and test report example.
+Please add meaninfull comments in the notebook about what you did and why.
+
+# HINTS and helpful links:
+- JDBC connection hint - https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach
+- Creation of user for the connection - https://www.tutorialspoint.com/ms_sql_server/ms_sql_server_create_users.htm
+- !!! Restart MS SQL server after user creation !!!
+- https://github.com/awslabs/python-deequ
+- debug connection issues via ERRORLOG of MS SQL Server
+
+# Grades:
+1. Environment setup is successful, connection to DB is established - 30 points
+2. Final Deequ_pySpark_skeleton.ipynb is well structured and all sections work just fine on mentors machine - 40 points
+3. Test report is present and easy to use - 20 points.
+4. Code is following PEP8 recommendations - 10 points.
+
+Pass grade is 80.
