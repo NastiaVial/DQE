@@ -39,6 +39,7 @@ great_expectations checkpoint new product_checkpoint
 a) run all cells in Jupiter notebook
 
 9. Make some changes in table Product in SQL Server and then run hw_product_suite
+(I deleted column "Size" for this HW)
 
 great_expectations suite list
 great_expectations suite edit hw_product_suite
