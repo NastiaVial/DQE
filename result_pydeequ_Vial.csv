@@ -1,0 +1,12 @@
+,check,check_level,check_status,constraint,constraint_status,constraint_message
+0,Review Check,Warning,Success,SizeConstraint(Size(None)),Success,
+1,Review Check,Warning,Success,"MinimumConstraint(Minimum(DepartmentID,None))",Success,
+2,Review Check,Warning,Success,"MaximumConstraint(Maximum(DepartmentID,None))",Success,
+3,Review Check,Warning,Success,"ComplianceConstraint(Compliance(DepartmentID is non-negative,COALESCE(CAST(DepartmentID AS DECIMAL(20,10)), 0.0) >= 0,None))",Success,
+4,Review Check,Warning,Success,"CompletenessConstraint(Completeness(DepartmentID,None))",Success,
+5,Review Check,Warning,Success,"CompletenessConstraint(Completeness(Name,None))",Success,
+6,Review Check,Warning,Success,"CompletenessConstraint(Completeness(GroupName,None))",Success,
+7,Review Check,Warning,Success,"CompletenessConstraint(Completeness(ModifiedDate,None))",Success,
+8,Review Check,Warning,Success,"UniquenessConstraint(Uniqueness(List(DepartmentID),None))",Success,
+9,Review Check,Warning,Success,"UniquenessConstraint(Uniqueness(List(Name),None))",Success,
+10,Review Check,Warning,Success,"ComplianceConstraint(Compliance(GroupName contained in Executive General and Administration,Inventory Management,Manufacturing,Quality Assurance,Research and Development,Sales and Marketing,`GroupName` IS NULL OR `GroupName` IN ('Executive General and Administration','Inventory Management','Manufacturing','Quality Assurance','Research and Development','Sales and Marketing'),None))",Success,
