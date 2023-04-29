@@ -1,0 +1,58 @@
+
+1. pip install great_expectations==0.16.0
+2. pip install sqlalchemy==1.4.45
+3. pip install pyodbc
+4. Initialize your Great Expectations deployment for the project:
+great_expectations init
+
+5. Create new datasourse
+great_expectations datasource new
+
+a) What data would you like Great Expectations to connect to?
+	2. Relational database (SQL)
+c) Which database backend are you using?:
+	7. other - Do you have a working SQLAlchemy connection string?
+d) Which data asset would you like to use: 1. Product
+
+e) In Jupiter notebook run all commands from file datasource_new.py.
+
+7. Create new suite 
+great_expectations suite new
+
+a) Select data_connector
+    1. default_runtime_data_connector_name
+    2. default_inferred_data_connector_name
+    3. default_configured_data_connector_name
+: 3
+
+b) Which data asset (accessible by data connector "default_configured_data_connector_name") would you like to use?
+    1. Product
+
+c) give name for you suite: 
+	hw_product_suite
+
+d) Run all cell of you in Jupiter notebook
+
+8. Create checkpoint:
+great_expectations checkpoint new product_checkpoint
+
+a) run all cells in Jupiter notebook
+
+9. Make some changes in table Product in SQL Server and then run hw_product_suite
+
+great_expectations suite list
+great_expectations suite edit hw_product_suite
+
+a)How would you like to edit your Expectation Suite?
+    1. Manually, without interacting with a sample batch of data (default)
+    2. Interactively, with a sample batch of data
+: 2
+
+10. run checkpoint after any changes in your suite:
+great_expectations checkpoint run product_checkpoint
+
+11. You will be able to see all results in index.html file
+path: great_expectations/uncommitted/data_docs/local_site/index.html file
+
+
+
