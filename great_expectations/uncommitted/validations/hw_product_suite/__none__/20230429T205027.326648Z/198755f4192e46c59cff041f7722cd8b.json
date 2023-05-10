@@ -1,0 +1,2088 @@
+{
+  "evaluation_parameters": {},
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {},
+      "data_asset_name": "Product",
+      "data_connector_name": "default_configured_data_connector_name",
+      "datasource_name": "my_datasource"
+    },
+    "batch_markers": {
+      "ge_load_time": "20230429T205027.372708Z"
+    },
+    "batch_spec": {
+      "batch_identifiers": {},
+      "class_name": "Asset",
+      "data_asset_name": "Product",
+      "module_name": "great_expectations.datasource.data_connector.asset",
+      "schema_name": "Production",
+      "sorters": {},
+      "table_name": "Product",
+      "type": null
+    },
+    "checkpoint_id": null,
+    "checkpoint_name": "Product_hw_product_suite",
+    "expectation_suite_name": "hw_product_suite",
+    "great_expectations_version": "0.16.0",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2023-04-29T22:50:27.326648+02:00"
+    },
+    "validation_id": null,
+    "validation_time": "20230429T205027.407238Z"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "exception_message": "Error: The column \"Size\" in BatchData does not exist.",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 555, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 90, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider.py\", line 427, in inner_func\n    column_name = get_dbms_compatible_column_names(\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 675, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 754, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"Size\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 276, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 290, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 559, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"Size\" in BatchData does not exist.\n",
+        "raised_exception": true
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "Size",
+          "mostly": 1.0,
+          "value_set": [
+            "L",
+            "46",
+            "40",
+            "S",
+            "56",
+            "XL",
+            "38",
+            "42",
+            "48",
+            "50",
+            "58",
+            "70",
+            "M",
+            "44",
+            "62",
+            "60",
+            "54",
+            "52"
+          ]
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "Size"
+              },
+              "metric_name": "column.distinct_values",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1,
+            "parse_strings_as_datetimes": false
+          }
+        }
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": "Error: The column \"Size\" in BatchData does not exist.",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 555, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 90, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\column_aggregate_metric_provider.py\", line 161, in inner_func\n    column_name = get_dbms_compatible_column_names(\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 675, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 754, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"Size\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 276, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 290, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 559, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"Size\" in BatchData does not exist.\n",
+        "raised_exception": true
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_unique_value_count_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "Size",
+          "max_value": 18,
+          "min_value": 18,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "Size"
+              },
+              "metric_name": "column.distinct_values.count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": "Error: The column \"Size\" in BatchData does not exist.",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 555, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 90, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\column_aggregate_metric_provider.py\", line 161, in inner_func\n    column_name = get_dbms_compatible_column_names(\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 675, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 754, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"Size\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 276, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 290, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 559, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"Size\" in BatchData does not exist.\n",
+        "raised_exception": true
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "Size",
+          "max_value": 0.08530805687203792,
+          "min_value": 0.08530805687203792,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "Size"
+              },
+              "metric_name": "column.unique_proportion",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": "Error: The column \"Size\" in BatchData does not exist.",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 555, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 90, in inner_func\n    return metric_fn(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider.py\", line 427, in inner_func\n    column_name = get_dbms_compatible_column_names(\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 675, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 754, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"Size\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 276, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 290, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Anastasiya_Vial\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 559, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"Size\" in BatchData does not exist.\n",
+        "raised_exception": true
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "Size",
+          "max_value": 0.08530805687203792,
+          "min_value": 0.08530805687203792,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "Size"
+              },
+              "metric_name": "column.unique_proportion",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_table_row_count_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "max_value": 504,
+          "min_value": 504
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 504
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_table_columns_to_match_set",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column_set": [
+            "MakeFlag",
+            "ProductNumber",
+            "Style",
+            "FinishedGoodsFlag",
+            "Weight",
+            "SafetyStockLevel",
+            "SellEndDate",
+            "ModifiedDate",
+            "Color",
+            "ProductID",
+            "ProductSubcategoryID",
+            "Name",
+            "ListPrice",
+            "ReorderPoint",
+            "ProductModelID",
+            "Size",
+            "SizeUnitMeasureCode",
+            "ProductLine",
+            "DaysToManufacture",
+            "rowguid",
+            "StandardCost",
+            "Class",
+            "WeightUnitMeasureCode",
+            "DiscontinuedDate",
+            "SellStartDate"
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "details": {
+          "mismatched": {
+            "missing": [
+              "Size"
+            ]
+          }
+        },
+        "observed_value": [
+          "Class",
+          "Color",
+          "DaysToManufacture",
+          "DiscontinuedDate",
+          "FinishedGoodsFlag",
+          "ListPrice",
+          "MakeFlag",
+          "ModifiedDate",
+          "Name",
+          "ProductID",
+          "ProductLine",
+          "ProductModelID",
+          "ProductNumber",
+          "ProductSubcategoryID",
+          "ReorderPoint",
+          "SafetyStockLevel",
+          "SellEndDate",
+          "SellStartDate",
+          "SizeUnitMeasureCode",
+          "StandardCost",
+          "Style",
+          "Weight",
+          "WeightUnitMeasureCode",
+          "rowguid"
+        ]
+      },
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_unique",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductID"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductID"
+              },
+              "metric_name": "column_values.unique.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductID"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductID"
+              },
+              "metric_name": "column_values.nonnull.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_min_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductID",
+          "max_value": 1,
+          "min_value": 1,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductID"
+              },
+              "metric_name": "column.min",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 1
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_max_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductID",
+          "max_value": 999,
+          "min_value": 999,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductID"
+              },
+              "metric_name": "column.max",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 999
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductID",
+          "max_value": 999,
+          "min_value": 1,
+          "mostly": 1.0,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "column_max_values_range_estimator": {
+              "metric_configuration": {
+                "domain_kwargs": {
+                  "column": "ProductID"
+                },
+                "metric_name": "column.max",
+                "metric_value_kwargs": null
+              },
+              "num_batches": 1
+            },
+            "column_min_values_range_estimator": {
+              "metric_configuration": {
+                "domain_kwargs": {
+                  "column": "ProductID"
+                },
+                "metric_name": "column.min",
+                "metric_value_kwargs": null
+              },
+              "num_batches": 1
+            }
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_quantile_values_to_be_between",
+        "kwargs": {
+          "allow_relative_error": false,
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductID",
+          "quantile_ranges": {
+            "quantiles": [
+              0.25,
+              0.5,
+              0.75
+            ],
+            "value_ranges": [
+              [
+                447,
+                447
+              ],
+              [
+                747,
+                747
+              ],
+              [
+                873,
+                873
+              ]
+            ]
+          }
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductID"
+              },
+              "metric_name": "column.quantile_values",
+              "metric_value_kwargs": {
+                "allow_relative_error": false,
+                "quantiles": [
+                  0.25,
+                  0.5,
+                  0.75
+                ]
+              }
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "details": {
+          "success_details": [
+            true,
+            true,
+            true
+          ]
+        },
+        "observed_value": {
+          "quantiles": [
+            0.25,
+            0.5,
+            0.75
+          ],
+          "values": [
+            447,
+            747,
+            873
+          ]
+        }
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_median_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductID",
+          "max_value": 747.5,
+          "min_value": 747.5,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductID"
+              },
+              "metric_name": "column.median",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 747.5
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_mean_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductID",
+          "max_value": 673.0396825396825,
+          "min_value": 673.0396825396825,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductID"
+              },
+              "metric_name": "column.mean",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 673.0396825396825
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_stdev_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductID",
+          "max_value": 229.37314180957807,
+          "min_value": 229.37314180957807,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductID"
+              },
+              "metric_name": "column.standard_deviation",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 229.37314180957807
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_unique",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "Name"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "Name"
+              },
+              "metric_name": "column_values.unique.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "Name"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "Name"
+              },
+              "metric_name": "column_values.nonnull.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_unique",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductNumber"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductNumber"
+              },
+              "metric_name": "column_values.unique.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductNumber"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductNumber"
+              },
+              "metric_name": "column_values.nonnull.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "StandardCost"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "StandardCost"
+              },
+              "metric_name": "column_values.nonnull.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ListPrice"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ListPrice"
+              },
+              "metric_name": "column_values.nonnull.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "SellStartDate"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "SellStartDate"
+              },
+              "metric_name": "column_values.nonnull.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_min_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "SellStartDate",
+          "max_value": "2008-04-30T00:00:00",
+          "min_value": "2008-04-30T00:00:00",
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "SellStartDate"
+              },
+              "metric_name": "column.min",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": "2008-04-30T00:00:00"
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_max_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "SellStartDate",
+          "max_value": "2013-05-30T00:00:00",
+          "min_value": "2013-05-30T00:00:00",
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "SellStartDate"
+              },
+              "metric_name": "column.max",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": "2013-05-30T00:00:00"
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "SellStartDate",
+          "max_value": "2013-05-30T00:00:00",
+          "min_value": "2008-04-30T00:00:00",
+          "mostly": 1.0,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "column_max_values_range_estimator": {
+              "metric_configuration": {
+                "domain_kwargs": {
+                  "column": "SellStartDate"
+                },
+                "metric_name": "column.max",
+                "metric_value_kwargs": null
+              },
+              "num_batches": 1
+            },
+            "column_min_values_range_estimator": {
+              "metric_configuration": {
+                "domain_kwargs": {
+                  "column": "SellStartDate"
+                },
+                "metric_name": "column.min",
+                "metric_value_kwargs": null
+              },
+              "num_batches": 1
+            }
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_unique_value_count_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "SellStartDate",
+          "max_value": 4,
+          "min_value": 4,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "SellStartDate"
+              },
+              "metric_name": "column.distinct_values.count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 4
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "SellStartDate",
+          "max_value": 0.007936507936507936,
+          "min_value": 0.007936507936507936,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "SellStartDate"
+              },
+              "metric_name": "column.unique_proportion",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 0.007936507936507936
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_min_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductSubcategoryID",
+          "max_value": 1,
+          "min_value": 1,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductSubcategoryID"
+              },
+              "metric_name": "column.min",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 1
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_max_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductSubcategoryID",
+          "max_value": 37,
+          "min_value": 37,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductSubcategoryID"
+              },
+              "metric_name": "column.max",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 37
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductSubcategoryID",
+          "max_value": 37,
+          "min_value": 1,
+          "mostly": 1.0,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "column_max_values_range_estimator": {
+              "metric_configuration": {
+                "domain_kwargs": {
+                  "column": "ProductSubcategoryID"
+                },
+                "metric_name": "column.max",
+                "metric_value_kwargs": null
+              },
+              "num_batches": 1
+            },
+            "column_min_values_range_estimator": {
+              "metric_configuration": {
+                "domain_kwargs": {
+                  "column": "ProductSubcategoryID"
+                },
+                "metric_name": "column.min",
+                "metric_value_kwargs": null
+              },
+              "num_batches": 1
+            }
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "missing_count": 209,
+        "missing_percent": 41.46825396825397,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_quantile_values_to_be_between",
+        "kwargs": {
+          "allow_relative_error": false,
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductSubcategoryID",
+          "quantile_ranges": {
+            "quantiles": [
+              0.25,
+              0.5,
+              0.75
+            ],
+            "value_ranges": [
+              [
+                2,
+                2
+              ],
+              [
+                12,
+                12
+              ],
+              [
+                17,
+                17
+              ]
+            ]
+          }
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductSubcategoryID"
+              },
+              "metric_name": "column.quantile_values",
+              "metric_value_kwargs": {
+                "allow_relative_error": false,
+                "quantiles": [
+                  0.25,
+                  0.5,
+                  0.75
+                ]
+              }
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "details": {
+          "success_details": [
+            true,
+            true,
+            true
+          ]
+        },
+        "observed_value": {
+          "quantiles": [
+            0.25,
+            0.5,
+            0.75
+          ],
+          "values": [
+            2,
+            12,
+            17
+          ]
+        }
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_median_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductSubcategoryID",
+          "max_value": 12,
+          "min_value": 12,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductSubcategoryID"
+              },
+              "metric_name": "column.median",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 12
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_mean_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductSubcategoryID",
+          "max_value": 12.294915254237289,
+          "min_value": 12.294915254237289,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductSubcategoryID"
+              },
+              "metric_name": "column.mean",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 12.294915254237289
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_stdev_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductSubcategoryID",
+          "max_value": 9.860134530977973,
+          "min_value": 9.860134530977973,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductSubcategoryID"
+              },
+              "metric_name": "column.standard_deviation",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 9.860134530977973
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductSubcategoryID",
+          "mostly": 1.0,
+          "value_set": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37
+          ]
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductSubcategoryID"
+              },
+              "metric_name": "column.distinct_values",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1,
+            "parse_strings_as_datetimes": false
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "missing_count": 209,
+        "missing_percent": 41.46825396825397,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_unique_value_count_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductSubcategoryID",
+          "max_value": 37,
+          "min_value": 37,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductSubcategoryID"
+              },
+              "metric_name": "column.distinct_values.count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 37
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductSubcategoryID",
+          "max_value": 0.12542372881355932,
+          "min_value": 0.12542372881355932,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductSubcategoryID"
+              },
+              "metric_name": "column.unique_proportion",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 0.12542372881355932
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_min_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductModelID",
+          "max_value": 1,
+          "min_value": 1,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductModelID"
+              },
+              "metric_name": "column.min",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 1
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_max_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductModelID",
+          "max_value": 128,
+          "min_value": 128,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductModelID"
+              },
+              "metric_name": "column.max",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 128
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductModelID",
+          "max_value": 128,
+          "min_value": 1,
+          "mostly": 1.0,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "column_max_values_range_estimator": {
+              "metric_configuration": {
+                "domain_kwargs": {
+                  "column": "ProductModelID"
+                },
+                "metric_name": "column.max",
+                "metric_value_kwargs": null
+              },
+              "num_batches": 1
+            },
+            "column_min_values_range_estimator": {
+              "metric_configuration": {
+                "domain_kwargs": {
+                  "column": "ProductModelID"
+                },
+                "metric_name": "column.min",
+                "metric_value_kwargs": null
+              },
+              "num_batches": 1
+            }
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "missing_count": 209,
+        "missing_percent": 41.46825396825397,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_quantile_values_to_be_between",
+        "kwargs": {
+          "allow_relative_error": false,
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductModelID",
+          "quantile_ranges": {
+            "quantiles": [
+              0.25,
+              0.5,
+              0.75
+            ],
+            "value_ranges": [
+              [
+                11,
+                11
+              ],
+              [
+                26,
+                26
+              ],
+              [
+                49,
+                49
+              ]
+            ]
+          }
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductModelID"
+              },
+              "metric_name": "column.quantile_values",
+              "metric_value_kwargs": {
+                "allow_relative_error": false,
+                "quantiles": [
+                  0.25,
+                  0.5,
+                  0.75
+                ]
+              }
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "details": {
+          "success_details": [
+            true,
+            true,
+            true
+          ]
+        },
+        "observed_value": {
+          "quantiles": [
+            0.25,
+            0.5,
+            0.75
+          ],
+          "values": [
+            11,
+            26,
+            49
+          ]
+        }
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_median_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductModelID",
+          "max_value": 26,
+          "min_value": 26,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductModelID"
+              },
+              "metric_name": "column.median",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 26
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_mean_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductModelID",
+          "max_value": 37.44406779661017,
+          "min_value": 37.44406779661017,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductModelID"
+              },
+              "metric_name": "column.mean",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 37.44406779661017
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_stdev_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "ProductModelID",
+          "max_value": 34.025442017484266,
+          "min_value": 34.025442017484266,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "ProductModelID"
+              },
+              "metric_name": "column.standard_deviation",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 34.025442017484266
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_min_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "SellEndDate",
+          "max_value": "2012-05-29T00:00:00",
+          "min_value": "2012-05-29T00:00:00",
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "SellEndDate"
+              },
+              "metric_name": "column.min",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": "2012-05-29T00:00:00"
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_max_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "SellEndDate",
+          "max_value": "2013-05-29T00:00:00",
+          "min_value": "2013-05-29T00:00:00",
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "SellEndDate"
+              },
+              "metric_name": "column.max",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": "2013-05-29T00:00:00"
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "SellEndDate",
+          "max_value": "2013-05-29T00:00:00",
+          "min_value": "2012-05-29T00:00:00",
+          "mostly": 1.0,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "column_max_values_range_estimator": {
+              "metric_configuration": {
+                "domain_kwargs": {
+                  "column": "SellEndDate"
+                },
+                "metric_name": "column.max",
+                "metric_value_kwargs": null
+              },
+              "num_batches": 1
+            },
+            "column_min_values_range_estimator": {
+              "metric_configuration": {
+                "domain_kwargs": {
+                  "column": "SellEndDate"
+                },
+                "metric_name": "column.min",
+                "metric_value_kwargs": null
+              },
+              "num_batches": 1
+            }
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "missing_count": 406,
+        "missing_percent": 80.55555555555556,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_unique_value_count_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "SellEndDate",
+          "max_value": 2,
+          "min_value": 2,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "SellEndDate"
+              },
+              "metric_name": "column.distinct_values.count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 2
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+        "kwargs": {
+          "batch_id": "198755f4192e46c59cff041f7722cd8b",
+          "column": "SellEndDate",
+          "max_value": 0.02040816326530612,
+          "min_value": 0.02040816326530612,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "SellEndDate"
+              },
+              "metric_name": "column.unique_proportion",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 0.02040816326530612
+      },
+      "success": true
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 49,
+    "success_percent": 89.79591836734694,
+    "successful_expectations": 44,
+    "unsuccessful_expectations": 5
+  },
+  "success": false
+}
